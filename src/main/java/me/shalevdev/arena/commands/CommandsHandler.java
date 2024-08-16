@@ -2,21 +2,22 @@ package me.shalevdev.arena.commands;
 
 import me.shalevdev.arena.Arena;
 import me.shalevdev.arena.commands.interfaces.INamedCommandExecutor;
+import me.shalevdev.arena.commands.root_level_commands.ArenaCommand;
 
 import java.util.Objects;
 
-public class CommandHandler {
-    private static CommandHandler instance;
-    private INamedCommandExecutor[] commands;
-    private Arena mainInstance;
-    public static CommandHandler getInstance(){
+public class CommandsHandler {
+    private static CommandsHandler instance;
+    private final INamedCommandExecutor[] commands;
+    private final Arena mainInstance;
+    public static CommandsHandler getInstance(){
         if (instance == null){
-            instance = new CommandHandler();
+            instance = new CommandsHandler();
         }
         return instance;
     }
 
-    private CommandHandler(){
+    private CommandsHandler(){
         mainInstance = Arena.getInstance();
         commands = new INamedCommandExecutor[] {
                 ArenaCommand.getInstance()

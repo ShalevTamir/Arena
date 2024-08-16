@@ -1,6 +1,6 @@
 package me.shalevdev.arena;
 
-import me.shalevdev.arena.commands.CommandHandler;
+import me.shalevdev.arena.commands.CommandsHandler;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class Arena extends JavaPlugin {
@@ -13,7 +13,7 @@ public final class Arena extends JavaPlugin {
     @Override
     public void onEnable() {
         instance = this;
-        CommandHandler.getInstance().registerCommands();
+        CommandsHandler.getInstance().registerCommands();
     }
 
     @Override
