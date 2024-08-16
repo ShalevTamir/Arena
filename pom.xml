@@ -38,6 +38,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <outputDirectory>C:\Users\shale\Desktop\My minecraft server\plugins</outputDirectory>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
                     </execution>

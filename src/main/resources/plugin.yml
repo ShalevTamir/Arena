@@ -2,3 +2,9 @@ name: Arena
 version: '${project.version}'
 main: me.shalevdev.arena.Arena
 api-version: '1.20'
+
+commands:
+  arena:
+    description: The main command for the arena plugin
+    usage: /<command>
+
