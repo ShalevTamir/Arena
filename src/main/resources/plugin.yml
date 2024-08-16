@@ -1,0 +1,4 @@
+name: Arena
+version: '${project.version}'
+main: me.shalevdev.arena.Arena
+api-version: '1.20'
