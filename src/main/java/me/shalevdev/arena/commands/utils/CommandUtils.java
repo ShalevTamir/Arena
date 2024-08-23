@@ -11,7 +11,7 @@ public class CommandUtils {
         }
         return instance;
     }
-    public boolean dispatchCommandToHandlers(Iterable<ISubCommandHandler> handlers, CommandSender sender, String[] args){
+    public boolean dispatchCommandToHandlers(CommandSender sender, String[] args, ISubCommandHandler ...handlers){
         for (ISubCommandHandler handler : handlers){
             if (handler.getSubcommandName().equals(args[0].toLowerCase()))
                 return handler.handle(sender, args);
