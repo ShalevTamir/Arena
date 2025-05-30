@@ -12,7 +12,7 @@
     <name>Arena</name>
 
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -30,7 +30,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
@@ -38,6 +38,7 @@
                             <goal>shade</goal>
                         </goals>
                         <configuration>
+                            <shadedArtifactAttached>true</shadedArtifactAttached>
                             <outputDirectory>C:\Users\shale\Desktop\My minecraft server\plugins</outputDirectory>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
                         </configuration>
@@ -69,7 +70,11 @@
             <groupId>org.spigotmc</groupId>
             <artifactId>spigot-api</artifactId>
             <version>1.20.6-R0.1-SNAPSHOT</version>
-            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>6.1.14</version>
         </dependency>
     </dependencies>
 </project>

@@ -1,4 +1,4 @@
-package me.shalevdev.arena.commands.validators;
+package me.shalevdev.arena.validators;
 
 import org.bukkit.command.CommandSender;
 
@@ -12,12 +12,11 @@ public abstract class BaseValidator{
 
     public BaseValidator setNext(BaseValidator nextValidator){
         this.nextValidator = nextValidator;
-        this.nextValidator.rootValidator = this.rootValidator == null ? this : this.rootValidator;
+        this.nextValidator.rootValidator = getRootValidator();
         return this.nextValidator;
     }
-
     public BaseValidator getRootValidator(){
-        return this.rootValidator;
+        return this.rootValidator == null ? this : this.rootValidator;
     }
 
     protected boolean passToNextValidator(CommandSender sender, String[] commandArgs){

@@ -1,32 +1,27 @@
 package me.shalevdev.arena.commands;
 
-import me.shalevdev.arena.Arena;
-import me.shalevdev.arena.commands.interfaces.INamedCommandExecutor;
-import me.shalevdev.arena.commands.root_level_commands.ArenaCommand;
+import me.shalevdev.arena.ArenaPlugin;
+import me.shalevdev.arena.commands.interfaces.NamedCommandExecutor;
+import me.shalevdev.arena.commands.command_executors.arena.ArenaCommandExecutor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
-import java.util.Objects;
-
+@Service
 public class CommandsHandler {
-    private static CommandsHandler instance;
-    private final INamedCommandExecutor[] commands;
-    private final Arena mainInstance;
-    public static CommandsHandler getInstance(){
-        if (instance == null){
-            instance = new CommandsHandler();
-        }
-        return instance;
-    }
+    private final NamedCommandExecutor[] commands;
+    private final ArenaPlugin plugin;
 
-    private CommandsHandler(){
-        mainInstance = Arena.getInstance();
-        commands = new INamedCommandExecutor[] {
-                ArenaCommand.getInstance()
+    @Autowired
+    public CommandsHandler(ArenaPlugin plugin, ArenaCommandExecutor arenaCommandExecutor){
+        this.plugin = plugin;
+        commands = new NamedCommandExecutor[] {
+                arenaCommandExecutor
         };
     }
 
     public void registerCommands(){
-         for (INamedCommandExecutor command : this.commands){
-             Objects.requireNonNull(mainInstance.getCommand(command.getCommandName())).setExecutor(command);
+         for (NamedCommandExecutor commandExecutor : this.commands){
+             plugin.getCommand(commandExecutor.getCommandName()).setExecutor(commandExecutor);
          }
     }
 }
