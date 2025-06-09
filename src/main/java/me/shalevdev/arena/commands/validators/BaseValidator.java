@@ -1,4 +1,4 @@
-package me.shalevdev.arena.validators;
+package me.shalevdev.arena.commands.validators;
 
 import org.bukkit.command.CommandSender;
 

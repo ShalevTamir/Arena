@@ -1,10 +1,9 @@
 package me.shalevdev.arena.commands.command_executors;
 
 import me.shalevdev.arena.commands.interfaces.NamedCommandExecutor;
-import me.shalevdev.arena.validators.BaseValidator;
+import me.shalevdev.arena.commands.validators.BaseValidator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
-import org.springframework.stereotype.Service;
 
 import java.util.Arrays;
 

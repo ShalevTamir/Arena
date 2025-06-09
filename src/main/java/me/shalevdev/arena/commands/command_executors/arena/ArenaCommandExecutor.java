@@ -1,9 +1,9 @@
 package me.shalevdev.arena.commands.command_executors.arena;
 
 import me.shalevdev.arena.commands.command_executors.BaseCommandExecutor;
-import me.shalevdev.arena.commands.command_executors.arena.subcommands.MenuSubCommandExecutor;
-import me.shalevdev.arena.validators.CommandArgsValidator;
-import me.shalevdev.arena.validators.PlayerValidator;
+import me.shalevdev.arena.commands.command_executors.arena.subcommands.StartSubCommandExecutor;
+import me.shalevdev.arena.commands.validators.CommandArgsValidator;
+import me.shalevdev.arena.commands.validators.PlayerValidator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,10 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class ArenaCommandExecutor extends BaseCommandExecutor {
-    private final MenuSubCommandExecutor menuSubCommand;
+    private final StartSubCommandExecutor menuSubCommand;
 
     @Autowired
-    public ArenaCommandExecutor(MenuSubCommandExecutor menuSubCommand){
+    public ArenaCommandExecutor(StartSubCommandExecutor menuSubCommand){
         super("arena",
                 new PlayerValidator().setNext(new CommandArgsValidator()));
         this.menuSubCommand = menuSubCommand;

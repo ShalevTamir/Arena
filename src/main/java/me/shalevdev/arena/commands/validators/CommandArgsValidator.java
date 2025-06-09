@@ -1,12 +1,11 @@
-package me.shalevdev.arena.validators;
+package me.shalevdev.arena.commands.validators;
 
 import org.bukkit.command.CommandSender;
-import org.bukkit.entity.Player;
 
-public class PlayerValidator extends BaseValidator {
+public class CommandArgsValidator extends BaseValidator {
     @Override
     public boolean validate(CommandSender sender, String[] commandArgs) {
-        if (sender instanceof Player){
+        if (commandArgs.length > 0){
             return passToNextValidator(sender, commandArgs);
         }
         else{
