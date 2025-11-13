@@ -1,4 +1,4 @@
-package me.shalevdev.arena.commands.interfaces;
+package me.shalevdev.arena.models.commands.interfaces;
 
 import org.bukkit.command.CommandExecutor;
 

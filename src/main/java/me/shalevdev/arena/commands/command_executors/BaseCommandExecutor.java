@@ -1,6 +1,6 @@
 package me.shalevdev.arena.commands.command_executors;
 
-import me.shalevdev.arena.commands.interfaces.NamedCommandExecutor;
+import me.shalevdev.arena.models.commands.interfaces.NamedCommandExecutor;
 import me.shalevdev.arena.commands.validators.BaseValidator;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
